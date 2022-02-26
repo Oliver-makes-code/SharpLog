@@ -27,12 +27,13 @@ namespace SharpLog {
 
         public void Warn(Object text) {
             WriteId("Warn");
-            Console.WriteLine(text);
+            Console.Error.WriteLine(text);
         }
 
         public void Error(Object text) {
             WriteId("Error");
             Console.Error.WriteLine(text);
+            throw new Exception(text);
         }
     }
 }
